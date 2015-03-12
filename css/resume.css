@@ -1,13 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
 body {
-  font-family: sans-serif;
   padding: 0;
   margin: 0;
+  font-size: .8em;
+}
+body.light #container {
+  padding: 0;
+  font-family: Inconsolata;
+  font-size: 1em;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.resume {
+  position: relative;
 }
 section.header {
   background: hsl(205,50%,80%);
   margin: 0;
-  padding: 2em 6em;
+  padding: 1em 2em;
   color: hsl(205,50%,25%);
+  position: relative;
+  z-index: 10;
+  font-size: .8em;
 }
 section.header:after {
   display: block;
@@ -15,10 +32,12 @@ section.header:after {
   content: ' ';
   height: 0;
 }
+section.header .header_left {
+  float: left;
+}
 section.header h1 {
   margin: 0;
   font-size: 3em;
-  float: left;
 }
 section.header address {
   float: right;
@@ -30,371 +49,87 @@ section.header address a {
   margin-bottom: .4em;
   color: hsl(205,50%,40%);
 }
-.timeline {
-  white-space: nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  width: 100%;
-}
-.timeline li {
-  display: inline-block;
-  text-align: center;
-  padding-top: 7.4em;
-  padding-bottom: 10em;
-}
-.timeline li:nth-child(2n) {
-  background: #f3f3f3;
-}
-.tasks {
-  list-style: none;
-  font-size: .8em;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  top: 5em;
+.resume_tasks .timeline li:nth-child(2n) {
+  background: transparent;
 }
 @media screen {
-  .tasks li {
-    border: 2px solid rgba(0,0,0,.2);
-    position: absolute;
-    white-space: nowrap;
-    padding: .5em;
-    width: 1em;
-    height: 2em;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    z-index: 100;
-    border-radius: 1em 1em 0 0;
-    margin-top: 0em;
+  section.header {
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-bottom: 1px solid black;
   }
-  .tasks li.ongoing {
-    border-radius: 1em 0 0 0;
-    border-right: 0;
+  .tasks .timeline li {
+    height: auto;
   }
-  .tasks li.ongoing:after {
-    display: inline-block;
-    content: ' ';
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255, 255, 255, 1) 100%);
-    width: 4em;
-    position: absolute;
-    right: -4em;
-    top: -2px;
-    bottom: -2px;
-    border: 2px solid rgba(0,0,0,.2);
-    border-image: linear-gradient(90deg, rgba(0,0,0,.2) 0%, rgba(0, 0, 0, 0) 100%) 1 stretch;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    border-left: 0;
-    border-right: 0;
-  }
-  .tasks li.level2 {
-    height: 4em;
-    z-index: 80;
-  }
-  .tasks li.level3 {
-    height: 6em;
-    z-index: 60;
-  }
-  .tasks li.level4 {
-    height: 8em;
-    z-index: 40;
-  }
-  .tasks li.education {
-    background: rgba(255,128,128,1);
-    background: hsla(0,50%,50%, .8);
-    margin-top: 6em;
-    border-radius: 0 0 1em 1em;
-  }
-  .tasks li.education:hover {
-    background: hsla(0,50%,40%, 1);
-  }
-  .tasks li.employment {
-    margin-top: 2em;
-    background: hsla(205,50%,50%, .8);
-  }
-  .tasks li.employment:hover {
-    background: hsla(205,50%,50%, 1);
-  }
-  .tasks li.employment.level2 {
-    background: hsla(205,50%,60%, .8);
-    margin-top: 0;
-  }
-  .tasks li.employment.level2:hover {
-    background: hsla(205,50%,60%, 1);
-  }
-  .tasks li.employment.level3 {
-    background: hsla(205,50%,70%, .8);
-  }
-  .tasks li.employment.level3:hover {
-    background: hsla(205,50%,70%, 1);
-  }
-  .tasks li.employment.ongoing:after {
-    background: linear-gradient(90deg, hsla(205,50%,50%,.8) 10%, rgba(255, 255, 255, 1) 100%);
-  }
-  .tasks li.play {
-    background: hsla(90,50%,40%, .8);
-    margin-top: 6em;
-    border-radius: 0 0 1em 1em;
-  }
-  .tasks li.play.ongoing {
-    border-radius: 0 0 0 1em;
-  }
-  .tasks li.play:hover {
-    background: hsla(90,50%,40%, 1);
-  }
-  .tasks li.play.level2 {
-    background: hsla(90,50%,50%, .8);
-  }
-  .tasks li.play.level2:hover {
-    background: hsla(90,50%,50%, 1);
-  }
-  .tasks li.play.level3 {
-    background: hsla(90,50%,60%, .8);
-  }
-  .tasks li.play.level3:hover {
-    background: hsla(90,50%,60%, 1);
-  }
-  .tasks li.play.level4 {
-    background: hsla(90,50%,70%, .8);
-  }
-  .tasks li.play.level4:hover {
-    background: hsla(90,50%,70%, 1);
-  }
-  .tasks li.play.ongoing.level1:after {
-    background: linear-gradient(90deg, hsla(90,50%,40%,.8) 10%, rgba(255, 255, 255, 1) 100%);
-  }
-  .tasks li.play.ongoing.level2:after {
-    background: linear-gradient(90deg, hsla(90,50%,50%,.8) 10%, rgba(255, 255, 255, 1) 100%);
-  }
-  .tasks li.play.ongoing.level3:after {
-    background: linear-gradient(90deg, hsla(90,50%,60%,.8) 10%, rgba(255, 255, 255, 1) 100%);
-  }
-  .tasks li.play.ongoing.level4:after {
-    background: linear-gradient(90deg, hsla(90,50%,70%,.8) 10%, rgba(255, 255, 255, 1) 100%);
-  }
-  .tasks li.play.ongoing:after {
-    background: linear-gradient(90deg, hsla(90,50%,70%,.8) 10%, rgba(255, 255, 255, 1) 100%);
-  }
-  .task.education,
-  .task.play {
-    height: auto !important;
-    min-height: 0;
-  }
-  .task.education.level2 .task_label,
-  .task.play.level2 .task_label {
-    margin-top: 2em;
-  }
-  .task.education.level3 .task_label,
-  .task.play.level3 .task_label {
-    margin-top: 4em;
-  }
-  .task.education.level4 .task_label,
-  .task.play.level4 .task_label {
-    margin-top: 6em;
-  }
-  .task_label {
-    margin: 0;
-    font-weight: bold;
-    font-size: .9em;
-  }
-
-  /* timeline pop-out */
-  .tasks li {
-    transition: background 150ms ease-out;
-    padding: 0;
-    cursor: pointer;
-  }
-  .tasks li .task_description {
-    display: block;
-    max-height: 0;
-    position: relative;
-    margin-left: -2px;
-    padding-left: .5em;
-    z-index: 1000;
-    overflow: hidden;
-    opacity: 0;
-    border: 2px solid rgba(0,0,0,0);
-    border-radius: 0 1em 1em 1em;
-    margin-bottom: -2px;
-    transition-property: opacity, max-width, height, max-height, min-height, background;
-    transition-duration: 250ms;
-    transition-timing-function: ease-out;
-    width: 20em;
-    
-  }
-  .tasks li h3 {
-    background: hsla(50, 80%, 80%, 0);
-    border-bottom: 2px solid hsla(50, 80%, 80%, 0);
-    transition: border-color 250ms ease-out;
-    margin: .2em 0;
-    padding: 0 .5em;
-  }
-  .tasks li h4 {
+  .skills .timeline li span {
     display: none;
   }
-  .tasks li.displaying {
-    background: hsla(50, 80%, 80%, .8) !important;
-    z-index: 1000;
+}
+@media screen and (max-width: 800px) {
+  body {
+    font-size: .6em;
   }
-  .tasks li.displaying h3 {
-    position: relative;
-    z-index: 1005;
-    margin-bottom: -2px;
-    padding-right: 1em;
-    border-bottom: 5px solid hsla(50, 80%, 80%, 1);
-  }
-  .tasks li.displaying .task_description {
-    max-height: 20em;
-    overflow: auto;
-    min-width: 30em;
-    width: 200%;
-    border: 2px solid rgba(0,0,0,.2);
-    margin-left: -2px;
-    margin-bottom: -2px;
-    background: hsla(50, 80%, 80%, 1) !important;
-    opacity: 1;
-    border-radius: 0 0 1em 1em;
-    white-space: normal;
-    padding: .5em;
-    cursor: default;
-  }
-  .tasks li.ongoing.displaying .task_description {
-    border-right: 0;
-    border-top: 2px solid rgba(0,0,0,0);
-    border-radius: 0 0 0 1em;
-    max-width: 100%;
-  }
-  .tasks li.ongoing.displaying:after {
-    background: linear-gradient(90deg, hsla(50,80%,80%,.8) 10%, rgba(255, 255, 255, 1) 100%) !important;
-  }
-  .tasks li.ongoing.displaying .task_description {
-  }
-  .tasks li textarea.task_description {
-    border: 0;
-    margin: 0;
-    padding: 0;
-  }
-  .tasks li.displaying textarea.task_description {
-    min-height: 20em;
+  section.header {
+    padding: 0 2em;
   }
 }
-
-/* d3.js timeline stuff */
-path.line {
-  fill: none;
-  stroke: #666;
-  stroke-width: 1.5px;
-}
-
-path.area {
-  fill: #e7e7e7;
-}
-
-.axis {
-  shape-rendering: crispEdges;
-}
-
-.x.axis line {
-  stroke: #000;
-}
-.x.axis line.border {
-  stroke: #000;
-}
-.x.axis .minor {
-  stroke-opacity: .5;
-}
-
-.x.axis path {
-  display: none;
-}
-
-.y.axis line, .y.axis path {
-  fill: none;
-  stroke: #000;
-}
-/* end d3.js timeline stuff */
-
-
-/*
-.task_label {
-  position: absolute;
-  display: inline-block;
-  top: .2em;
-  z-index: 1000;
-}
-.task.education .task_label,
-.task.play .task_label {
-  bottom: .2em;
-  top: auto;
-}
-*/
 
 @media print {
-  section.header {
-    padding: 2em;
+  body {
+    font-size: 1.2em;
   }
-  .timeline {
+  section.header {
+    padding: 2em 0 0 0;
+    width: 100%;
+  }
+  .tasks .timeline {
     display: none;
+  }
+  .skills .timeline {
+    display: block;
+    position: relative;
+    top: auto;
+    bottom: auto;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .tasks .timeline li {
+    height: 0;
+  }
+  .skills .timeline li {
+    height: auto;
+    padding: 0;
+  }
+  .skills .timeline li span {
+    padding: 0;
+  }
+  #container .timeline li:nth-child(2n) {
+    background: none;
+  }
+  .timeline li:nth-child(2n) span {
+    visibility: hidden;
+    background: none;
+  }
+  #container .timeline li {
+    padding-top: 0;
+    padding: 0;
+    
+  }
+  .resume_tasks {
+    padding-top: 1em;
   }
   .tasks {
     margin-left: 2em;
     top: 0;
   }
-  .tasks li {
-    position: static;
-    border: 0;
-    height: auto;
-    overflow: visible;
-    white-space: normal;
-    width: auto !important;
-    max-width: 60em;
-    margin: 0;
-    border-radius: 0 !important;
+  .tasks.employment>:first-child {
+    max-width: 75%;
   }
-  .tasks li .task_description {
-    max-height: none;
-    max-width: none;
-    height: auto;
-    margin-left: 0;
-    margin-bottom: 0;
-    overflow: hidden;
-    opacity: 1;
-    border: 0;
-    width: auto;
-    
-  }
-  .tasks li.employment,
-  .tasks li.play,
-  .tasks li.education,
-  .tasks li.employment.level1,
-  .tasks li.employment.level2,
-  .tasks li.employment.level3,
-  .tasks li.play.level1,
-  .tasks li.play.level2,
-  .tasks li.play.level3,
-  .tasks li.play.level4,
-  .tasks li.education.level1,
-  .tasks li.education.level2,
-  .tasks li.education.level3 {
-    height: auto;
-    margin: .5em 0;
-    padding: .5em 0;
-    background: #fff;
-  }
-  .tasks li.employment.level1 .task_label,
-  .tasks li.employment.level2 .task_label,
-  .tasks li.employment.level3 .task_label,
-  .tasks li.employment.level4 .task_label,
-  .tasks li.education.level1 .task_label,
-  .tasks li.education.level2 .task_label,
-  .tasks li.education.level3 .task_label,
-  .tasks li.education.level4 .task_label, 
-  .tasks li.play.level1 .task_label,
-  .tasks li.play.level2 .task_label,
-  .tasks li.play.level3 .task_label,
-  .tasks li.play.level4 .task_label {
-    margin-top: 0;
+  #container .skills {
+    position: absolute;
+    top: 0;
+    padding: 0 1em;
+    margin-left: -1em;
+    transform: scale(.9);
+    transform-origin: 0 0;
   }
 }
