@@ -1,0 +1,82 @@
+.skills {
+  z-index: 1;
+  position: relative;
+}
+.skills:before {
+  content: 'skills';
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: .5em;
+  font-size: 1.8em;
+  color: rgba(64,64,64,.4);
+  font-weight: bold;
+}
+.skills svg {
+  z-index: 1;
+  position: relative;
+}
+.skills svg path {
+  opacity: .9;
+  stroke: rgba(0,0,0,.2);
+}
+.skills svg text {
+  stroke: rgba(255,255,255,.35);
+  stroke-width: 2px;
+  fill: rgba(0,0,0,1);
+  font-size: 1em;
+  /*font-family: sans-serif;*/
+  vertical-align: middle;
+  pointer-events: none;
+}
+@media screen {
+  .skills svg path:hover {
+    opacity: 1;
+    stroke: rgba(255,0,0,.6);
+  }
+  .skills svg text.active {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+.skills_editor {
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  margin: 0;
+  position: absolute;
+  top: -200px;
+  width: 100%;
+  display: none;
+}
+.skills_editor.active {
+  display: block;
+}
+.skills_editor canvas {
+  display: block;
+  margin: 0;
+}
+.skills_editor svg {
+  display: block;
+  margin-top: -200px;
+}
+@media print {
+  .skills {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform-origin: 0 0;
+    z-index: 10;
+  }
+  .skills svg path {
+    opacity: .4;
+  }
+  .skills svg text {
+    font-size: .8em;
+    fill: rgba(0,0,0,1);
+  }
+  .skills:before {
+    display: none;
+  }
+}

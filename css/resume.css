@@ -14,6 +14,9 @@ body.light #container {
 * {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+a {
+  color: hsl(205,50%,40%);
+}
 .resume {
   position: relative;
 }
@@ -23,7 +26,7 @@ section.header {
   padding: 1em 2em;
   color: hsl(205,50%,25%);
   position: relative;
-  z-index: 10;
+  z-index: 50;
   font-size: .8em;
 }
 section.header:after {
@@ -33,21 +36,54 @@ section.header:after {
   height: 0;
 }
 section.header .header_left {
-  float: left;
 }
 section.header h1 {
   margin: 0;
   font-size: 3em;
+  display: inline-block;
+  vertical-align: middle;
+}
+img.resume_profile_image {
+  display: inline-block;
+  border: 1px solid white;
+  box-shadow: 0px 0px 5px white;
+  vertical-align: middle;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  margin-top: 0.2em;
 }
 section.header address {
-  float: right;
+  position: absolute;
+  top: 1em;
+  right: 1em;
   font-style: normal;
 }
 section.header address a {
   display: block;
   text-align: right;
-  margin-bottom: .4em;
+  margin-bottom: .2em;
   color: hsl(205,50%,40%);
+}
+.header_crosspromo {
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-top: 1em;
+}
+.header_crosspromo>div {
+  display: inline-block;
+  width: 40%;
+}
+.header_crosspromo img {
+  display: inline-block;
+  float: left;
+  margin-right: .75em;
+  vertical-align: middle;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.header_crosspromo a img {
+  border: 0;
 }
 .resume_tasks .timeline li:nth-child(2n) {
   background: transparent;
@@ -63,6 +99,9 @@ section.header address a {
   .skills .timeline li span {
     display: none;
   }
+  .header_crosspromo .crosspromo_print {
+    display: none;
+  }
 }
 @media screen and (max-width: 800px) {
   body {
@@ -75,10 +114,17 @@ section.header address a {
 
 @media print {
   body {
-    font-size: 1.2em;
+    font-size: 1.4em;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:visited {
+    text-decoration: none;
+    color: hsl(205,50%,40%);
   }
   section.header {
-    padding: 2em 0 0 0;
+    padding: 0 0 1em 0;
     width: 100%;
   }
   .tasks .timeline {
@@ -91,6 +137,7 @@ section.header address a {
     bottom: auto;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    width: 100%;
   }
   .tasks .timeline li {
     height: 0;
@@ -122,14 +169,35 @@ section.header address a {
     top: 0;
   }
   .tasks.employment>:first-child {
-    max-width: 75%;
+    max-width: 70%;
+  }
+  .tasks.play {
+    display: none;
   }
   #container .skills {
     position: absolute;
     top: 0;
     padding: 0 1em;
     margin-left: -1em;
-    transform: scale(.9);
+    left: 0;
+    right: 0;
+    xtransform: scale(.9);
     transform-origin: 0 0;
+  }
+  .header_crosspromo {
+    display: block;
+    position: relative;
+    top: 0;
+    margin: 0;
+    float: none;
+    margin-top: 1em;
+  }
+  .header_crosspromo .crosspromo_screen,
+  .header_crosspromo .crosspromo_vr {
+    display: none;
+  }
+  .header_crosspromo img {
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }

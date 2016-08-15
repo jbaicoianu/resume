@@ -1,76 +1,94 @@
+{component name="resume.janusvr"}
+
 <!--
+               ┏┓┏━┓┏┳┓┏━╸┏━┓   ┏┓ ┏━┓╻┏━╸┏━┓╻┏━┓┏┓╻╻ ╻
+                ┃┣━┫┃┃┃┣╸ ┗━┓   ┣┻┓┣━┫┃┃  ┃ ┃┃┣━┫┃┗┫┃ ┃
+              ┗━┛╹ ╹╹ ╹┗━╸┗━┛   ┗━┛╹ ╹╹┗━╸┗━┛╹╹ ╹╹ ╹┗━┛
+
 Hello, and welcome to my resume!  If you're reading this, you've probably been 
 given a link to my resume and want to see if the code was any good.
 
-I hope you find it to your liking.
+The code for this resume is open source under the MIT license, and can be found 
+at https://github.com/jbaicoianu/resume/.  I hope you find it to your liking.
 -->
 
 <section class="header">
   <div class="header_left">
+    <img class="resume_profile_image" src="https://avatars0.githubusercontent.com/u/251610?v=3&s=460" />
     <h1>James Baicoianu</h1>
     <h2></h2>
   </div>
 
   <address>
-    <a href="mailto:james_resume2015@baicoianu.com">james@baicoianu.com</a>
+    <a href="mailto:james_resume2016@baicoianu.com">james@baicoianu.com</a>
     <a href="tel:1-408-472-4812">+1-408-472-4812</a>
-    <a href="http://github.com/jbaicoianu/">github.com/jbaicoianu</a>
-    <a href="http://twitter.com/bai0/">twitter.com/bai0</a>
+    <a href="https://github.com/jbaicoianu/">github.com/jbaicoianu</a>
+    <a href="https://twitter.com/bai0/">twitter.com/bai0</a>
   </address>
+
+  <div class="header_crosspromo">
+    <div class="crosspromo_print"><img src="/images/resume/desktopmobileicon.png"> This is the printed version of this resume<br>Interactive version available online at <a href="http://baicoianu.com/resume/">baicoianu.com/resume/</a></div>
+    
+    <div class="crosspromo_screen"><a href="javascript:print()"><img src="/images/resume/printericon.png"></a> This is the interactive version of this resume.<br>Also available in a <a href="javascript:print()">printed version</a></div>
+
+    <div class="crosspromo_vr"><a href="javascript:elation.resume.interactive.obj[0].initVR()"><img src="/images/resume/vricon.png"></a> This resume is also a portal to the Metaverse.<br><a href="javascript:elation.resume.interactive.obj[0].initVR()">Activate VR mode</a> to experience it</div>
+  </div>
+
 </section>
 
 <div data-elation-component="resume.interactive">
  <data class="elation-args" name="data">
   {
-    "range": ["1995-01-02", "2015-02-21"],
+    "range": ["1995-01-02", "2016-12-31"],
     "tasks": {
       "employment": [
         { 
           "id": "task_employment_supercritical", 
-          "taskname": "Supercritical Industries", 
+          "taskname": "Supercritical Industries, LLC", 
           "roles": ["Founder"], 
           "start": "2008-09-02",
           "end": "ongoing", 
           "type": "employment", 
           "level": 2,
           "bulletpoints": [
-            "Developed open source WebGL/WebVR 3d engine",
-            "Use Emscripten to compile applications and runtime environments to the web, so they can be embedded within WebVR worlds"
+            "Creators of the Elation Engine open source VR platform",
+            "www.Metacade.com - online VR arcade which lets users play arcade, DOS, Windows, Amiga, and other classic games in the browser.",
+            "www.AugmentedPerception.com - Metaverse search engine",
+            "JanusWeb.Metacade.com - web-based client for JanusVR worlds"
           ],
           "technologies": [
-            "Three.js", "Emscripten", "AWS", "Linux", "Windows", "Android", "iOS"
+            "Three.js", "WebGL", "WebVR", "Emscripten", "Blender", "JavaScript", "HTML5", "AWS", "Oculus Rift", "HTC Vive", "GearVR", "Google Cardboard"
           ]
         }, { 
           "id": "task_employment_thefind", 
-          "taskname": "TheFind", 
-          "roles": ["Frontend Architect"], 
+          "taskname": "TheFind, Inc.", 
+          "roles": ["Platform Architect"], 
           "start": "2006-08-14",
-          "end": "ongoing", 
+          "end": "2015-03-31", 
           "type": "employment", 
           "level": 1,
           "bulletpoints": [
-            "Responsible for leading UI and UX development since product launch in 2006",
-            "Built lots of things",
-            "Established formal development and release processes"
+            "Shopping search engine which indexed 500M products from 500K online merchants",
+            "Lead frontend and platform development from product launch in 2006 to acquisition by Facebook in 2015",
+            "Built search platform, defined APIs, and established formal development and release processes"
           ],
           "technologies": [
-            "Apache", "PHP", "JavaScript", "C++", "Python", "Shell", "Android", "Linux Virtual Server"
+            "Apache", "PHP", "JavaScript", "HTML5", "Memcache", "MySQL", "Cassandra", "C++", "Python", "Shell", "Android", "LVS", "SVN", "Git", "AWS"
           ]
         }, { 
           "id": "task_employment_affini",
-          "taskname": "Affini",
+          "taskname": "Affini, Inc.",
           "roles": ["Senior Software Engineer"],
           "start": "2004-08-01",
           "end": "2006-12-31",
           "type": "employment",
           "level": 2,
           "bulletpoints": [
-            "Implemented frontend for people search engine",
-            "Lead development of search-based advertising platform which matched users with ads based on social media profiles",
-            "Performed systems and network administration as needed"
+            "Lead development of search-based ad platform which matched users with ads based on social media profiles",
+            "Presented product on stage at DEMO.com conference"
           ],
           "technologies": [
-            "Apache", "Networking", "Python", "PHP", "HTML/CSS", "JavaScript"
+            "Linux", "Networking", "Apache", "Python", "PHP", "PostgreSQL", "Jabber", "XHTML", "CSS", "JavaScript"
           ]
         }, {
           "id": "task_employment_asl",
@@ -81,11 +99,11 @@ I hope you find it to your liking.
           "type": "employment",
           "level": 1,
           "bulletpoints": [
-            "Developed a custom shopping cart and CRM systems for managing multiple storefronts",
+            "Developed e-commerce backend and CRM system for managing multiple storefronts",
             "Designed, built, and maintained Linux clusters and network"
           ],
           "technologies": [
-            "Apache", "Networking", "Perl", "PHP", "HTML/CSS", "JavaScript"
+            "Linux", "Networking", "Apache", "Perl", "PHP", "DHTML", "CSS", "JavaScript", "LVS"
           ]
         }, {
           "id": "task_employment_mccormick",
@@ -96,39 +114,37 @@ I hope you find it to your liking.
           "type": "employment",
           "level": 2,
           "bulletpoints": [
-            "Developed in-house CRM tool to handle product inquiries, B2B fulfillment, customer support issues, and direct marketing",
-            "Designed, built, and administrated scalable Linux webhosting cluster"
+            "Developed CRM software to handle product inquiries, B2B fulfillment, customer support, and direct marketing",
+            "Designed, built, and maintained scalable Linux webhosting cluster"
+          ],
+          "technologies": [
+            "Linux", "Networking", "Apache", "Perl", "PHP", "DHTML", "CSS", "JavaScript", "LVS"
           ]
         }, {
           "id": "task_employment_ucr",
           "taskname": "UCR Housing",
           "roles": ["Residential Computing Consultant"],
           "start": "2000-08-01",
-          "end": "2001-03-01",
+          "end": "2001-02-01",
           "type": "employment",
           "level": 1,
           "bulletpoints": [
             "Provided technical assistance to residence hall students and staff",
             "Developed thin client and server-side applications for use in residence hall computer labs", 
             "Dealt with a variety of network related problems on the campus network"
+          ],
+          "technologies": [
+            "Linux", "Networking", "Perl"
           ]
         }
       ],
       "education": [
         {
-          "id": "task_education_udacity",
-          "taskname": "Udacity",
-          "roles": ["Student"],
-          "start": "2013-02-20",
-          "end": "present",
-          "type": "education",
-          "level": 5 
-        }, {
           "id": "task_education_ucr",
           "taskname": "UCR",
           "roles": ["Student"],
           "start": "1999-09-01",
-          "end": "2001-01-01",
+          "end": "2001-02-01",
           "type": "education",
           "level": 1,
           "bulletpoints": [
@@ -170,7 +186,16 @@ I hope you find it to your liking.
         }
        ],
       "play": [
-        { "id": "task_play_elationengine",
+        { "id": "task_play_archive",
+          "taskname": "Archive.org",
+          "roles": ["Volunteer, Emularity Project"],
+          "start": "2014-09-01",
+          "end": "ongoing",
+          "type": "play",
+          "level": 5,
+          "description": "<ul><li>Worked with a team of volunteers dedicated to bringing emulation of old computing platforms and software to the web (Amiga, AppleII, MS-DOS, Win3.1, and hundreds of arcade games)</li><li>Organized and operated booths for VR demos during DecentralizedWeb.net and other Archive.org events</li></ul>"
+        }, {
+          "id": "task_play_elationengine",
           "taskname": "Elation Engine",
           "roles": ["Creator"],
           "start": "2011-02-01",
@@ -201,7 +226,7 @@ I hope you find it to your liking.
           "taskname": "Multimedia Set-top Box",
           "roles": ["Creator"],
           "start": "2001-01-15",
-          "end": "ongoing",
+          "end": "2012-03-01",
           "type": "play",
           "level": 3,
           "description": "My quest for the perfect multimedia set-top box began over a decade ago, and I'm still not happy with the state of this particular world.  This industry tends to go in cycles - every few years a promising new software, hardware, or content distribution option will come along, and then after a few months it's either been ruined by companies bowing to demands/legal pressure from content providers to neuter or delay the product (CableCARD), content providers pulling content (Netflix) or blocking devices (Hulu), and ever-present DRM woes.  Nevertheless, I'm still trying to come up with the perfect interface which ties together movie/tv streaming, video gaming, home automation, and casual web browsing into a unified set-top interface." 
@@ -243,7 +268,7 @@ I hope you find it to your liking.
           "description": "Hardwire.net was a collaborative effort with several friends to run a hardware review and news aggregation site.  This site was a playground for trying out new technologies, and I learned a lot about SQL, CSS, Perl, and PHP while evolving this product." 
         }, {
           "id": "task_play_j3dgp",
-          "taskname": "James' 3D Gaming Page",
+          "taskname": "James' 3D Gaming",
           "roles": ["Webmaster"],
           "start": "1996-12-01",
           "end": "1999-01-01",
@@ -284,7 +309,7 @@ I hope you find it to your liking.
       "Skills":{
         "math":[19,21.5,24.5,29,32,37.5,42.5,46,49,53.5,59,63,69.5,74.5,48.5,36,32,26,26,27,39.5,42,39.5,38,35.5,34,28.5,23.5,22,21,21,21.5,22,21,19.5,17.5,16.5,16.5,19,25.5,34.5,41.5,49,55.5,60.5,63.5,65.5,67,69,70.5],
         "physics":[0,0,0,0,0,0,9.5,18.5,21.5,20,26.5,29.5,30.5,33.5,37,33,30,33,42.5,42.5,31.5,24,21,20,20,19,16.5,11.5,12,11.5,11.5,13,14,14.5,14,12,11.5,12,13,14.5,14.5,17,21,35.5,42,49,50,48.5,51,52],
-        "management":[0,0,0,0,0,0,0,0,0,0,0,9.5,9.5,6.5,5,0,0,0,0,0,4.5,4.5,4.5,4,2.5,7.5,8,9.5,10,11,12,12,21,20,19,20.5,22,24,26,27.5,28.5,30.5,32.5,35,38.5,41.5,46.5,49.5,50,47.5],
+        "management":[0,0,0,0,0,0,0,0,0,0,0,9.5,9.5,6.5,5,0,0,0,0,0,4.5,4.5,4.5,4,2.5,7.5,8,9.5,10,11,12,12,21,20,19,20.5,22,24,26,27.5,28.5,30.5,32.5,39,48.5,51.5,56.5,69.5,62,65],
         "design":[0,0,0,0,0,0,0,0,0,0,0,0,11.5,12,2.5,0,0,4,10.5,11.5,12,12.5,11,10,11,11.5,11.5,11.5,15,17,18.5,18.5,16.5,13.5,12,12.5,13.5,16,18,19.5,20.5,22.5,24.5,27.5,30,39.5,45,49,52.5,57],
         "electronics":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0.5,4,3.5,3.5,3,4,5,6,6,6.5,11,15,13.5,14,14.5,14.5,14.5,15.5,14.5,8.5,7,7,14.5,21,25,28.5,30.5,32.5,36,35.5,35.5,35.5,35]
       }

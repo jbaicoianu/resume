@@ -1,0 +1,520 @@
+.resume_tasks {
+  min-height: 22em;
+  pointer-events: none;
+}
+.tasks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.tasks:before {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.tasks.employment:before {
+  content: 'work';
+}
+.tasks.education:before {
+  content: 'learn';
+}
+.tasks.play:before {
+  content: 'play';
+}
+.task {
+  pointer-events: auto;
+}
+.task h4 {
+  font-size: .8em;
+  font-weight: bold;
+}
+.task h3 {
+}
+.task .task_label {
+  margin: 0;
+  font-weight: normal;
+}
+.task .task_duration {
+  margin: 0;
+  display: inline-block;
+  float: right;
+}
+.task_description ul {
+  list-style: disc outside;
+  margin-left: 1.5em;
+  font-size: .9em;
+  margin-top: 1em;
+}
+.task_description ul li {
+  margin: .2em 0;
+  text-indent: -.5em;
+}
+
+.task_description li.task_technologies span::after {
+  content: ', ';
+}
+.task_description li.task_technologies span:last-child::after {
+  content: '';
+}
+@media screen {
+  .resume_tasks {
+    position: fixed;
+    bottom: 5em;
+    width: 100%;
+    z-index: 15;
+  }
+  .tasks {
+    position: absolute;
+  }
+  .tasks.position_top {
+    top: 5em;
+    height: 4em;
+  }
+  .tasks.position_bottom {
+    top: 11em;
+    height: 9em;
+  }
+  .tasks:before {
+    position: absolute;
+    display: block;
+    left: .5em;
+  }
+  .tasks.employment:before {
+    bottom: .5em;
+    color: hsla(205,50%,50%,.6);
+  }
+  .tasks.education:before {
+    color: hsla(0,50%,50%,.6);
+    top: 1em;
+  }
+  .tasks.play:before {
+    bottom: .5em;
+    color: hsla(90,50%,50%,.6);
+  }
+  .task {
+    border: 2px solid rgba(0,0,0,.2);
+    position: absolute;
+    padding: .5em;
+    width: 1em;
+    max-height: 2em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    z-index: 100;
+    border-radius: 1em 1em 0 0;
+    margin-top: 0em;
+  }
+  .task.ongoing {
+    border-radius: 1em 0 0 0;
+    border-right: 0;
+  }
+  .task.ongoing:after {
+    display: inline-block;
+    content: ' ';
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255, 255, 255, 1) 100%);
+    width: 4em;
+    position: absolute;
+    right: -4em;
+    top: -2px;
+    bottom: -2px;
+    border: 2px solid rgba(0,0,0,.2);
+    border-image: linear-gradient(90deg, rgba(0,0,0,.2) 0%, rgba(0, 0, 0, 0) 100%) 1 stretch;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-left: 0;
+    border-right: 0;
+  }
+  .task.level2 {
+    max-height: 4em;
+    z-index: 80;
+  }
+  .task.level3 {
+    max-height: 6em;
+    z-index: 60;
+  }
+  .task.level4 {
+    max-height: 8em;
+    z-index: 40;
+  }
+  .task.level5 {
+    max-height: 10em;
+    z-index: 20;
+  }
+  .task.education {
+    background: rgba(255,128,128,1);
+    background: hsla(0,50%,50%, .8);
+    xmargin-top: 6em;
+    border-radius: 0 0 1em 1em;
+  }
+  .task.education:hover {
+    background: hsla(0,50%,40%, 1);
+  }
+  .task.education.ongoing {
+    border-radius: 0 0 0 1em;
+  }
+  .task.education.ongoing:after {
+    background: linear-gradient(90deg, hsla(0,50%,50%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.education.ongoing:hover:after {
+    background: linear-gradient(90deg, hsla(0,50%,50%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.education.level2 {
+    background: hsla(0,50%,50%, .8);
+  }
+  .task.education.level2:hover {
+    background: hsla(0,50%,50%, 1);
+  }
+  .task.education.level3 {
+    background: hsla(0,50%,60%, .8);
+  }
+  .task.education.level3:hover {
+    background: hsla(0,50%,60%, 1);
+  }
+  .task.education.level4 {
+    background: hsla(0,50%,70%, .8);
+  }
+  .task.education.level4:hover {
+    background: hsla(0,50%,70%, 1);
+  }
+  .task.education.level5 {
+    background: hsla(0,50%,80%, .8);
+  }
+  .task.education.level5:hover {
+    background: hsla(0,50%,70%, 1);
+  }
+  .task.education.ongoing.level1:after {
+    background: linear-gradient(90deg, hsla(0,50%,40%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.education.ongoing.level2:after {
+    background: linear-gradient(90deg, hsla(0,50%,50%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.education.ongoing.level3:after {
+    background: linear-gradient(90deg, hsla(0,50%,60%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.education.ongoing.level4:after {
+    background: linear-gradient(90deg, hsla(0,50%,70%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.education.ongoing.level5:after {
+    background: linear-gradient(90deg, hsla(0,50%,80%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.employment {
+    bottom: 0;
+    background: hsla(205,50%,50%, .8);
+    max-height: 10em;
+  }
+  .task.employment:hover {
+    background: hsla(205,50%,50%, 1);
+  }
+  .task.employment.level2 {
+    background: hsla(205,50%,60%, .8);
+    margin-top: 0;
+    min-height: 4em;
+  }
+  .task.employment.level2:hover {
+    background: hsla(205,50%,60%, 1);
+  }
+  .task.employment.level3 {
+    background: hsla(205,50%,70%, .8);
+  }
+  .task.employment.level3:hover {
+    background: hsla(205,50%,70%, 1);
+  }
+  .task.employment.ongoing:after {
+    background: linear-gradient(90deg, hsla(205,50%,50%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.employment.level2.ongoing:after {
+    background: linear-gradient(90deg, hsla(205,50%,60%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.employment.level3.ongoing:after {
+    background: linear-gradient(90deg, hsla(205,50%,70%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.play {
+    background: hsla(90,50%,40%, .8);
+    xmargin-top: 6em;
+    border-radius: 0 0 1em 1em;
+  }
+  .task.play.ongoing {
+    border-radius: 0 0 0 1em;
+  }
+  .task.play:hover {
+    background: hsla(90,50%,40%, 1);
+  }
+  .task.play.level2 {
+    background: hsla(90,50%,50%, .8);
+  }
+  .task.play.level2:hover {
+    background: hsla(90,50%,50%, 1);
+  }
+  .task.play.level3 {
+    background: hsla(90,50%,60%, .8);
+  }
+  .task.play.level3:hover {
+    background: hsla(90,50%,60%, 1);
+  }
+  .task.play.level4 {
+    background: hsla(90,50%,70%, .8);
+  }
+  .task.play.level4:hover {
+    background: hsla(90,50%,70%, 1);
+  }
+  .task.play.level5 {
+    background: hsla(90,50%,80%, .8);
+  }
+  .task.play.level5:hover {
+    background: hsla(90,50%,80%, 1);
+  }
+  .task.play.ongoing.level1:after {
+    background: linear-gradient(90deg, hsla(90,50%,40%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.play.ongoing.level2:after {
+    background: linear-gradient(90deg, hsla(90,50%,50%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.play.ongoing.level3:after {
+    background: linear-gradient(90deg, hsla(90,50%,60%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.play.ongoing.level4:after {
+    background: linear-gradient(90deg, hsla(90,50%,70%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.play.ongoing.level5:after {
+    background: linear-gradient(90deg, hsla(90,50%,80%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.play.ongoing:after {
+    background: linear-gradient(90deg, hsla(90,50%,70%,.8) 10%, rgba(255, 255, 255, 1) 100%);
+  }
+  .task.education,
+  .task.play {
+    min-height: 0;
+  }
+  .task.education.level2 .task_label,
+  .task.play.level2 .task_label {
+    margin-top: 2em;
+  }
+  .task.education.level3 .task_label,
+  .task.play.level3 .task_label {
+    margin-top: 4em;
+  }
+  .task.education.level4 .task_label,
+  .task.play.level4 .task_label {
+    margin-top: 6em;
+  }
+  .task.education.level5 .task_label,
+  .task.play.level5 .task_label {
+    margin-top: 8em;
+  }
+  .task_label {
+    margin: 0;
+    font-weight: bold;
+    font-size: .9em;
+  }
+
+  /* timeline pop-out */
+  .task {
+    transition-property: background, max-height;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+    padding: 0;
+    cursor: pointer;
+  }
+  .task .task_description {
+    display: block;
+    position: relative;
+    transition-property: max-height, overflow;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+    overflow: auto;
+    white-space: normal;
+    padding: .5em;
+
+    opacity: 0;
+    min-width: 25em;
+    max-height: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0 .5em;
+  }
+  .task h3 {
+    white-space: nowrap;
+    background: hsla(50, 80%, 80%, 0);
+    border-bottom: 2px solid hsla(50, 80%, 80%, 0);
+    transition: border-color 250ms ease-out;
+    margin: .2em 0;
+    padding: 0 .5em;
+  }
+  .task .task_duration {
+    display: none;
+  }
+  .task.displaying {
+    background: hsla(50, 80%, 80%, .8) !important;
+    z-index: 1000;
+    height: auto;
+    max-height: 30em;
+    overflow: visible;
+  }
+  .task .task_label {
+    transition-property: margin;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+  }
+  .task.displaying .task_label {
+    margin-top: 0 !important;
+  }
+  .task.displaying h3 {
+    position: relative;
+    z-index: 1005;
+    margin-bottom: -2px;
+    padding-right: 1em;
+    border-bottom: 2px solid hsla(50, 80%, 80%, 1);
+    background: hsla(50, 80%, 80%, 1);
+    font-weight: bold;
+  }
+  .task.displaying.employment h3 {
+    border-radius: 1em 1em 0 0;
+  }
+  .task.displaying .task_description {
+    overflow: auto;
+    opacity: 1;
+    cursor: default;
+    background: hsla(50, 80%, 80%, 1) !important;
+    max-height: 20em;
+    padding: .5em;
+    border: 2px solid rgba(0,0,0,.2);
+    margin: 0 -2px -2px -2px;
+  }
+  .task.education.displaying .task_description,
+  .task.play.displaying .task_description {
+    border-radius: 0 0 1em 1em;
+  }
+  .task.ongoing.displaying .task_description {
+    border-right: 0;
+    border-top: 2px solid rgba(0,0,0,0);
+    max-width: 100%;
+  }
+  .task.ongoing.displaying:after {
+    background: linear-gradient(90deg, hsla(50,80%,80%,.8) 10%, rgba(255, 255, 255, 1) 100%) !important;
+  }
+  .task.ongoing.displaying .task_description {
+  }
+  .task textarea.task_description {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .task.displaying textarea.task_description {
+    min-height: 20em;
+  }
+  .task.education.displaying .task_description_offset,
+  .task.work.displaying .task_description_offset,
+  .task.play.displaying .task_description_offset {
+    border-top: 2px solid rgba(0,0,0,.2);
+    position: absolute;
+    right: 0;
+    border-radius: 1em 0 1em 1em;
+  }
+  .task.education.displaying.ongoing .task_description_offset,
+  .task.work.displaying.ongoing .task_description_offset,
+  .task.play.displaying.ongoing .task_description_offset {
+    border-radius: 1em 0 0 1em;
+    padding-right: 2em;
+    margin-right: -2em;
+  }
+}
+
+@media print {
+  .task {
+    position: static;
+    border: 0;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    white-space: normal;
+    width: auto !important;
+    margin: 0;
+    border-radius: 0 !important;
+    page-break-inside: avoid
+  }
+  .task .task_description {
+    max-height: none;
+    max-width: none;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    opacity: 1;
+    border: 0;
+    width: auto;
+    position: relative;
+    page-break-inside: avoid
+  }
+  .task_description ul li {
+    margin: .0em 0;
+    padding-left: .5em;
+    text-indent: -.5em;
+  }
+  .task .task_label {
+    font-size: 1.5em;
+  }
+  .task .task_role {
+    display: inline-block;
+    float: none;
+  }
+  .task .task_role::after {
+    content: ',';
+    margin-right: .5em;
+  }
+  .task .task_duration {
+    float: none;
+    font-weight: normal;
+  }
+  .task.employment,
+  .task.play,
+  .task.education,
+  .task.employment.level1,
+  .task.employment.level2,
+  .task.employment.level3,
+  .task.play.level1,
+  .task.play.level2,
+  .task.play.level3,
+  .task.play.level4,
+  .task.education.level1,
+  .task.education.level2,
+  .task.education.level3 {
+    height: auto;
+    margin: .2em 0;
+    padding: .5em 0;
+    background: rgba(255,255,255,.2);
+  }
+  .task.employment.level1 .task_label,
+  .task.employment.level2 .task_label,
+  .task.employment.level3 .task_label,
+  .task.employment.level4 .task_label,
+  .task.education.level1 .task_label,
+  .task.education.level2 .task_label,
+  .task.education.level3 .task_label,
+  .task.education.level4 .task_label, 
+  .task.play.level1 .task_label,
+  .task.play.level2 .task_label,
+  .task.play.level3 .task_label,
+  .task.play.level4 .task_label {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .tasks {
+    page-break-after: always;
+  }
+  .tasks:before {
+    border-bottom: 1px solid black;
+    display: block;
+    width: 25%;
+    padding-top: 3.0em;
+  }
+  .tasks.employment:before {
+  }
+  .tasks.education:before {
+  }
+  .tasks.play:before {
+  }
+  .tasks.education {
+    display: none;
+  }
+}
+
